@@ -1,0 +1,30 @@
+
+ERxpose local host server over public internet
+
+1 Install ngrok  https://dashboard.ngrok.com
+2. Add authtoken provided by ngrok. run ngrok authtoken <AUTHTOKEN From NGROK>
+3. run command ngrok http 8080
+
+use the url as jenkins url got git webhook <jenkins url>
+
+
+Create Git  WebHook 
+
+1. go to gitHub repo setting > Click on WebHook > add webhook > configure the following
+Payload URL : <Jenkins Url>/github-webhook/ 
+Content Type : aaplication/JSON
+Which events would you like to trigger this webhook? Just the Push event.
+
+Jenkins
+
+1. add git configuration plug in 
+2. add project url in the project General section .Check GitHub project
+3.provide repository url under source code amangement select git.
+4.check GitHub hook trigger for GITScm polling under build trigger
+
+
+now make a chenge in your repo and check jenkins for the build trigger.
+NJOY
+
+
+
